@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumpleaños ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    color:#333;
+    overflow-x:hidden;
+}
+
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    color:white;
+    text-shadow:2px 2px 10px rgba(0,0,0,.3);
+}
+
+.hero p{
+    color:white;
+    margin:20px;
+    font-size:1.2rem;
+}
+
+/* BOTONES */
+.btn{
+    background:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* TIMELINE */
+.timeline{
+    max-width:900px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin:25px 0;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+.card img{
+    width:100%;
+    max-width:500px;
+    border-radius:12px;
+    margin-top:15px;
+}
+
+/* QUIZ */
+.quiz button{
+    display:block;
+    margin:10px auto;
+    width:280px;
+}
+
+#quizResult{
+    margin-top:20px;
+    font-size:1.2rem;
+    font-weight:bold;
+    color:#d63384;
+}
+
+/* CUPONES Y PREMIOS */
+.coupons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.coupon{
+    background:white;
+    width:250px;
+    padding:25px;
+    border-radius:15px;
+    cursor:pointer;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.coupon:hover{
+    transform:translateY(-5px);
+}
+
+/* CAJA Y MENSAJES */
+.box{
+    background:white;
+    max-width:700px;
+    margin:30px auto;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+/* CORAZONES */
+.heart{
+    position:fixed;
+    font-size:25px;
+    animation:fall 4s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    from{transform:translateY(-100px);}
+    to{transform:translateY(100vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>🎂 Feliz Cumpleaños Mi Amor ❤️</h1>
+    <p>He preparado algo especial para ti...</p>
+
+    <button class="btn" onclick="scrollToTimeline()">
+        Comenzar nuestra historia 💖
+    </button>
+</section>
+
+<!-- HISTORIA -->
+<section id="timeline">
+
+    <h2>📖 Nuestra Historia</h2>
+
+    <div class="timeline">
+
+        <div class="card">
+            <h3>✨ Cómo nos conocimos</h3>
+            <img src="imagen1.jpg">
+        </div>
+
+        <div class="card">
+            <h3>❤️ Primer recuerdo especial</h3>
+            <img src="imagen2.jpg">
+        </div>
+
+        <div class="card">
+            <h3>✈️ Nuestro viaje favorito</h3>
+            <img src="imagen3.jpg">
+        </div>
+
+        <div class="card">
+            <h3>🎂 Hoy</h3>
+            <img src="imagen4.jpg">
+        </div>
+
+    </div>
+</section>
+
+<!-- PREGUNTA -->
+<section>
+
+    <h2>🤔 Una pregunta muy importante</h2>
+
+    <p style="font-size:1.3rem;font-weight:bold;color:#d63384;margin:20px 0;">
+        ¿Quién es la persona más increíble del mundo? ❤️
+    </p>
+
+    <div class="quiz">
+        <button class="btn" onclick="correct()">Tú ❤️</button>
+        <button class="btn" onclick="correct()">Obviamente tú ❤️</button>
+        <button class="btn" onclick="correct()">Siempre tú ❤️</button>
+    </div>
+
+    <div id="quizResult"></div>
+
+</section>
+
+<!-- CUPONES -->
+<section>
+
+    <h2>🎁 Cupones Especiales</h2>
+
+    <div class="coupons">
+        <div class="coupon" onclick="reveal(this,'🍝 Cena romántica')">🎁 Cupón 1</div>
+        <div class="coupon" onclick="reveal(this,'🎬 Película juntos')">🎁 Cupón 2</div>
+        <div class="coupon" onclick="reveal(this,'💆‍♀️ Masaje')">🎁 Cupón 3</div>
+        <div class="coupon" onclick="reveal(this,'🎉 Sorpresa')">🎁 Cupón 4</div>
+    </div>
+
+</section>
+
+<!-- PREMIOS -->
+<section>
+
+    <h2>🏆 Premios Oficiales</h2>
+
+    <div class="coupons">
+        <div class="coupon">🥇 Mejor sonrisa del mundo</div>
+        <div class="coupon">👑 Mejor novia del universo</div>
+        <div class="coupon">✈️ Mejor compañera de aventuras</div>
+        <div class="coupon">🤗 Mejor abrazadora</div>
+        <div class="coupon">❤️ Persona favorita</div>
+        <div class="coupon">⭐ Haces mi vida mejor</div>
+    </div>
+
+</section>
+
+<!-- CAJA SORPRESA -->
+<section>
+
+    <h2>🎁 Caja sorpresa</h2>
+
+    <button class="btn" onclick="openGift()">
+        Abrir regalo secreto 🎁
+    </button>
+
+    <div id="giftMessage" class="box" style="display:none;">
+        <h3>❤️ Sorpresa ❤️</h3>
+        <p>
+            Mi mejor regalo es seguir compartiendo la vida contigo.<br><br>
+            Gracias por cada sonrisa y cada momento.<br><br>
+            Te quiero muchísimo ❤️
+        </p>
+    </div>
+
+</section>
+
+<!-- FINAL -->
+<section>
+
+    <h2>🎂 Sorpresa final</h2>
+
+    <button class="btn" onclick="final()">
+        Abrir final 🎁
+    </button>
+
+    <div id="finalMessage" class="box" style="display:none;">
+        <h3>❤️ Feliz Cumpleaños ❤️</h3>
+        <p>
+            Gracias por existir en mi vida.<br><br>
+            Eres lo mejor que me ha pasado.<br><br>
+            Te quiero muchísimo ❤️
+        </p>
+    </div>
+
+</section>
+
+<script>
+
+function scrollToTimeline(){
+    document.getElementById("timeline")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+function correct(){
+    document.getElementById("quizResult").innerHTML =
+    "❤️ Correcto, eres tú siempre ❤️";
+}
+
+function reveal(el,text){
+    el.innerHTML = text;
+}
+
+function openGift(){
+
+    document.getElementById("giftMessage").style.display = "block";
+
+    for(let i=0;i<30;i++){
+        let heart=document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML="❤️";
+        heart.style.left=Math.random()*100+"vw";
+        document.body.appendChild(heart);
+        setTimeout(()=>heart.remove(),5000);
+    }
+}
+
+function final(){
+
+    document.getElementById("finalMessage").style.display = "block";
+
+    for(let i=0;i<80;i++){
+        let heart=document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML="❤️";
+        heart.style.left=Math.random()*100+"vw";
+        document.body.appendChild(heart);
+        setTimeout(()=>heart.remove(),5000);
+    }
+
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+}
+
+</script>
+
+</body>
+</html>
